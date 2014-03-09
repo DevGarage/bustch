@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="#thesimj">
+
+    <title>Channel Cell Generator</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/main.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <!--<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>-->
+    <!--<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>-->
+    <!--<![endif]&ndash;&gt;-->
+</head>
+
+<body>
+<br/>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-8">
+            <p><strong>Channel generator</strong> <small id="gmap-position"></small></p>
+        </div>
+        <div class="col-sm-4 text-right">
+            <button type="button" id="bnt-calculate" class="btn btn-sm btn-primary">Calculate</button>&nbsp;
+            <!--<button type="button" id="bnt-genfreq"  class="btn btn-sm btn-default">GenFreq</button>-->
+            <!--<button type="button" id="bnt-genfield" class="btn btn-sm btn-default">GenField</button>-->
+        </div>
+    </div>
+    <!--<p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>-->
+</div><!-- /.container -->
+<br/>
+<div class="container-fluid">
+    <!--<div class="row">-->
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="google-map-container" id="google-container-id"></div>
+        </div>
+    </div>
+
+    <!--</div>-->
+</div>
+
+
+<div class="modal fade" id="modal-add-ap" tabindex="-1" role="dialog" aria-labelledby="modal-add-ap" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4>Add new Access Point!</h4>
+                <p>Coordinate: <small id="span-dev-coordinate">46.5090,30.3212</small></p>
+            </div>
+            <div class="modal-body">
+
+                <!-- NAME -->
+                <div class="row">
+                    <div class="col-sm-4"><label for="input-name" class="control-label">Name: </label></div>
+                    <div class="col-sm-8"><input type="text" name="name" id="input-name" class="form-control"></div>
+                </div>
+
+                <br/>
+
+                <!-- Device power -->
+                <div class="row">
+                    <div class="col-sm-4"><label for="input-devgain" class="control-label">Device power: </label></div>
+                    <div class="col-sm-8">
+                        <div class="input-group"> <input type="number" name="devgain" id="input-devgain" class="form-control" value="19"> <span class="input-group-addon">dBm</span> </div>
+                    </div>
+                </div>
+
+                <br/>
+
+                <!-- Antenna Gain -->
+                <div class="row">
+                    <div class="col-sm-4"><label for="input-antgain" class="control-label">Antenna gain: </label></div>
+                    <div class="col-sm-8">
+                        <div class="input-group"> <input type="number" name="antgain" id="input-antgain" class="form-control" value="12"> <span class="input-group-addon">dBi</span> </div>
+                    </div>
+                </div>
+
+                <br/>
+
+                <!-- Azimuth -->
+                <div class="row">
+                    <div class="col-sm-4"><label for="input-azimuth" class="control-label">Azimuth: </label></div>
+                    <div class="col-sm-8">
+                        <div class="input-group"> <input type="number" name="azimuth" id="input-azimuth" class="form-control" value="0"> <span class="input-group-addon">°</span> </div>
+                    </div>
+                </div>
+
+                <br/>
+
+                <!-- Directivity pattern -->
+                <div class="row">
+                    <div class="col-sm-4"><label for="input-pattern" class="control-label">Pattern: </label></div>
+                    <div class="col-sm-8">
+                        <div class="input-group"> <input type="number" name="pattern" id="input-pattern" class="form-control" value="360"> <span class="input-group-addon">°</span> </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-default btn-primary" id="bnt-create-ap" type="button">Create</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?v=3&libraries=geometry&sensor=false"></script>
+<script src="js/helper.js"></script>
+<script src="js/engine.v2.js"></script>
+</body>
+</html>

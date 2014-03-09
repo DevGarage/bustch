@@ -1,0 +1,9 @@
+html,body{
+    background-color: #dcdcdc;
+}
+
+.google-map-container {
+    /*width: 800px;*/
+    height: 600px;
+    background-color: #31708f;
+}
